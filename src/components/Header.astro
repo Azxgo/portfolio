@@ -1,0 +1,15 @@
+---
+const isEnglish = Astro.url.pathname.startsWith("/en");
+---
+
+<header class="flex justify-between items-center p-6 bg-zinc-800/30">
+    <a href={isEnglish ? "/" : "/en"} class="w-12 hover:scale-110 transition transition-300" >
+        {isEnglish ? "Español" : "English"}
+    </a>
+    <nav class="flex flex-row gap-x-10">
+        <a class="w-12 hover:scale-110 transition transition-300" href="#inicio">{isEnglish ? "Home" : "Inicio"}</a>
+        <a class="w-18 hover:scale-110 transition transition-300" href="#sobremi">{isEnglish ? "About Me" : "Sobre Mi"}</a>
+        <a class="w-16 hover:scale-110 transition transition-300" href="#proyectos">{isEnglish ? "Projects" : "Proyectos"}</a>
+        <a class="w-16 hover:scale-110 transition transition-300" href="#contacto">{isEnglish ? "Contact" : "Contacto"}</a>
+    </nav>
+</header>

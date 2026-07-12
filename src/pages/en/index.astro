@@ -1,0 +1,90 @@
+---
+import GitHubIcon from "../../components/icons/GitHubIcon.astro";
+import LinkedinIcon from "../../components/icons/LinkedinIcon.astro";
+import SocialButtons from "../../components//SocialButtons.astro";
+import Layout from "../../layouts/Layout.astro";
+import SectionContainer from "../../components/SectionContainer.astro";
+import Projects from "../../components/Projects.astro";
+import AnimatedIcon from "../../components/AnimatedIcon.astro";
+import { icons } from "../../utils/icons.astro";
+import Contact from "../../components/Contact.astro";
+import MessageIcon from "../../components/icons/MessageIcon.astro";
+---
+
+<Layout>
+	<main class="container mx-auto p-22" id="inicio">
+		<SectionContainer
+			id="sobremi"
+			class="grid grid-cols-[2fr_1fr] gap-x-10"
+		>
+			<div class="flex flex-col justify-center gap-y-2">
+				<h1 class="text-5xl font-bold select-none">Agustin Moreira</h1>
+				<h3 class="text-2xl select-none">Full-Stack Web Developer</h3>
+				<p class="text-lg select-none">
+					Computer Engineering graduate specializing in Full Stack web
+					development. I enjoy building applications and platforms,
+					working across front-end, back-end, and database
+					technologies to create functional, scalable, and
+					user-focused solutions. I strive to write clean,
+					maintainable code while following software development best
+					practices, with a strong focus on innovation, efficiency and
+					continuous improvement.
+				</p>
+				<div class="flex flex-row mt-2 gap-4">
+					<SocialButtons>
+						<MessageIcon class="w-6 h-6" />
+						<span class="font-semibold">azugmoreira@gmail.com</span>
+					</SocialButtons>
+					<SocialButtons href="https://github.com/Azxgo">
+						<GitHubIcon class="w-6 h-6" />
+						<span class="font-semibold">GitHub</span>
+					</SocialButtons>
+					<SocialButtons>
+						<LinkedinIcon class="w-6 h-6" />
+						<span class="font-semibold">Linkedin</span>
+					</SocialButtons>
+				</div>
+			</div>
+
+			<div>
+				<div class="flex h-full items-center justify-center">
+					<img src="" alt="Epic" class="h-70 w-70 bg-gray-200" />
+				</div>
+			</div>
+		</SectionContainer>
+
+		<SectionContainer
+			class="flex flex-col mt-10 justify-center items-center gap-y-3"
+		>
+			<h2 class="text-3xl mb-4 tracking-widest select-none">SKILLS</h2>
+
+			<ul class="flex justify-center items-center gap-6">
+				{
+					icons.map(({ icon: Icon, label }) => (
+						<AnimatedIcon label={label}>
+							<Icon class="size-16" />
+						</AnimatedIcon>
+					))
+				}
+			</ul>
+		</SectionContainer>
+
+		<SectionContainer
+			id="proyectos"
+			class="flex flex-col justify-center items-center"
+		>
+			<h2 class="text-3xl mb-10 tracking-widest select-none">PROJECTS</h2>
+
+			<Projects lang="en"/>
+		</SectionContainer>
+
+		<SectionContainer
+			id="contacto"
+			class="flex flex-col justify-center items-center"
+		>
+			<h2 class="text-3xl mb-10 tracking-widest select-none">CONTACT</h2>
+
+			<Contact lang="en" />
+		</SectionContainer>
+	</main>
+</Layout>

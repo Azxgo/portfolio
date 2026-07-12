@@ -1,0 +1,49 @@
+---
+import { ContactForm } from "./ContactForm";
+import GitHubIcon from "./icons/GitHubIcon.astro";
+import LinkedinIcon from "./icons/LinkedinIcon.astro";
+import MessageIcon from "./icons/MessageIcon.astro";
+
+const { lang = "es" } = Astro.props as {
+    lang?: "es" | "en";
+};
+
+const t = {
+    es: {
+        title: "Hablemos",
+        description:
+            "Estoy disponible para proyectos web, colaboraciones o nuevas oportunidades. Si tienes una idea o necesitas ayuda con desarrollo, no dudes en contactarme.",
+    },
+    en: {
+        title: "Let's Talk",
+        description:
+            "I'm available for web development projects, collaborations, and new opportunities. If you have an idea or need help with development, feel free to get in touch.",
+    },
+};
+---
+
+<div class="grid grid-cols-2 w-full gap-10">
+    <div class="flex flex-col justify-center gap-4 h-full">
+        <h2 class="text-3xl font-semibold">{t[lang].title}</h2>
+
+        <p class="text-lg text-gray-400">
+            {t[lang].description}
+        </p>
+
+        <div class="flex flex-col gap-2 text-sm">
+            <div class="flex gap-2">
+                <MessageIcon class="w-5 h-5" />
+                <p>azugmoreira@gmail.com</p>
+            </div>
+            <div class="flex gap-2">
+                <LinkedinIcon class="w-5 h-5" />
+                <p>LinkedIn</p>
+            </div>
+            <div class="flex gap-2">
+                <GitHubIcon class="w-5 h-5" />
+                <p>GitHub</p>
+            </div>
+        </div>
+    </div>
+    <ContactForm lang={lang} client:load />
+</div>

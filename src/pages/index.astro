@@ -1,0 +1,115 @@
+---
+import GitHubIcon from "../components/icons/GitHubIcon.astro";
+import LinkedinIcon from "../components/icons/LinkedinIcon.astro";
+import SocialButtons from "../components//SocialButtons.astro";
+import Layout from "../layouts/Layout.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import Projects from "../components/Projects.astro";
+import AnimatedIcon from "../components/AnimatedIcon.astro";
+import { icons } from "../utils/icons.astro";
+import Contact from "../components/Contact.astro";
+import MessageIcon from "../components/icons/MessageIcon.astro";
+---
+
+<Layout>
+	<main class="container mx-auto p-22" id="inicio">
+		<SectionContainer
+			id="sobremi"
+			class="grid md:grid-cols-[2fr_minmax(300px,400px)] gap-5 md:gap-10"
+		>
+			<div class="flex flex-col justify-center gap-y-2">
+				<h1 class="text-5xl font-bold select-none">Agustin Moreira</h1>
+				<h3 class="text-2xl select-none">Full-Stack Web Developer</h3>
+				<p class="text-lg select-none">
+					Titulado en Ingeniería en Informática. Me especializo y
+					disfruto del desarrollo de aplicaciones y plataformas web
+					Full Stack, abarcando Front-end, Back-end y bases de datos,
+					aplicando tecnologías modernas para crear soluciones
+					funcionales, escalables y orientadas a las necesidades de
+					los usuarios. Me enfoco en desarrollar software siguiendo
+					buenas prácticas de programación, con código limpio y
+					mantenible, priorizando la innovación, la eficiencia y la
+					mejora continua.
+				</p>
+				<div class="flex flex-row mt-2 gap-4">
+					<SocialButtons>
+						<MessageIcon class="w-6 h-6" />
+						<span class="font-semibold">azugmoreira@gmail.com</span>
+					</SocialButtons>
+					<SocialButtons href="https://github.com/Azxgo">
+						<GitHubIcon class="w-6 h-6" />
+						<span class="font-semibold">GitHub</span>
+					</SocialButtons>
+					<SocialButtons>
+						<LinkedinIcon class="w-6 h-6" />
+						<span class="font-semibold">Linkedin</span>
+					</SocialButtons>
+				</div>
+			</div>
+
+			<div>
+				<div class="relative w-fit">
+					
+					<div
+						class="absolute inset-0 translate-x-4 translate-y-4 rounded-3xl bg-zinc-800/30"
+					>
+					</div>
+
+					<div
+						class="relative overflow-hidden rounded-3xl shadow-2xl ring-1 ring-white/10"
+					>
+						
+						<div
+							class="absolute inset-0 bg-gradient-to-tr from-indigo-600/20 via-transparent to-indigo-800/40 z-10"
+						>
+						</div>
+
+						<img
+							src="/img/img1.JPEG"
+							alt="Agustín Moreira"
+							class="h-[420px] w-[340px] object-cover"
+						/>
+					</div>
+				</div>
+			</div>
+		</SectionContainer>
+
+		<SectionContainer
+			class="flex flex-col mt-10 justify-center items-center gap-y-3"
+		>
+			<h2 class="text-3xl mb-4 tracking-widest select-none">
+				COMPETENCIAS
+			</h2>
+
+			<ul class="flex justify-center items-center gap-6">
+				{
+					icons.map(({ icon: Icon, label }) => (
+						<AnimatedIcon label={label}>
+							<Icon class="size-16" />
+						</AnimatedIcon>
+					))
+				}
+			</ul>
+		</SectionContainer>
+
+		<SectionContainer
+			id="proyectos"
+			class="flex flex-col justify-center items-center"
+		>
+			<h2 class="text-3xl mb-10 tracking-widest select-none">
+				PROYECTOS
+			</h2>
+
+			<Projects />
+		</SectionContainer>
+
+		<SectionContainer
+			id="contacto"
+			class="flex flex-col justify-center items-center"
+		>
+			<h2 class="text-3xl mb-10 tracking-widest select-none">CONTACTO</h2>
+
+			<Contact />
+		</SectionContainer>
+	</main>
+</Layout>
