@@ -28,7 +28,7 @@ export function ImageGallery({ images }) {
         <div className="flex flex-col gap-4">
             <img
                 src={current}
-                className={`w-full h-54 object-cover transition-opacity duration-300
+                className={`w-full aspect-[18/9] object-cover transition-opacity duration-300
                     ${fade ? "opacity-0" : "opacity-100"}`}
             />
 
