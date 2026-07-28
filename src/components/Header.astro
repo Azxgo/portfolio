@@ -2,14 +2,67 @@
 const isEnglish = Astro.url.pathname.startsWith("/en");
 ---
 
-<header class="flex justify-between items-center p-6 bg-zinc-800/30">
-    <a href={isEnglish ? "/" : "/en"} class="w-12 hover:scale-110 transition transition-300" >
-        {isEnglish ? "Español" : "English"}
-    </a>
-    <nav class="flex flex-row gap-x-10">
-        <a class="w-12 hover:scale-110 transition transition-300" href="#inicio">{isEnglish ? "Home" : "Inicio"}</a>
-        <a class="w-18 hover:scale-110 transition transition-300" href="#sobremi">{isEnglish ? "About Me" : "Sobre Mi"}</a>
-        <a class="w-16 hover:scale-110 transition transition-300" href="#proyectos">{isEnglish ? "Projects" : "Proyectos"}</a>
-        <a class="w-16 hover:scale-110 transition transition-300" href="#contacto">{isEnglish ? "Contact" : "Contacto"}</a>
+<header class="bg-zinc-800/30">
+    <div class="mx-auto flex items-center justify-between px-6 py-4">
+        <a
+            href={isEnglish ? "/" : "/en"}
+            class="w-12 hover:scale-110 transition transition-300"
+        >
+            {isEnglish ? "Español" : "English"}
+        </a>
+
+        <button
+            id="menu-btn"
+            class="md:hidden flex flex-col gap-1"
+            aria-label="Abrir menu"
+        >
+            <span class="w-6 h-0.5 bg-white"></span>
+            <span class="w-6 h-0.5 bg-white"></span>
+            <span class="w-6 h-0.5 bg-white"></span>
+        </button>
+
+        <nav class="hidden md:flex flex-row gap-x-10">
+            <a
+                class="w-12 hover:scale-110 transition transition-300"
+                href="#inicio">{isEnglish ? "Home" : "Inicio"}</a
+            >
+            <a
+                class="w-18 hover:scale-110 transition transition-300"
+                href="#sobremi">{isEnglish ? "About Me" : "Sobre Mi"}</a
+            >
+            <a
+                class="w-16 hover:scale-110 transition transition-300"
+                href="#proyectos">{isEnglish ? "Projects" : "Proyectos"}</a
+            >
+            <a
+                class="w-16 hover:scale-110 transition transition-300"
+                href="#contacto">{isEnglish ? "Contact" : "Contacto"}</a
+            >
+        </nav>
+    </div>
+
+    <nav
+        id="mobile-menu"
+        class="md:hidden flex flex-col overflow-hidden max-h-0 opacity-0 px-6 gap-4 transition-all duration-300 ease-in-out"
+    >
+        <a href="#inicio">{isEnglish ? "Home" : "Inicio"}</a>
+        <a href="#sobremi">{isEnglish ? "About Me" : "Sobre Mí"}</a>
+        <a href="#proyectos">{isEnglish ? "Projects" : "Proyectos"}</a>
+        <a href="#contacto">{isEnglish ? "Contact" : "Contacto"}</a>
     </nav>
 </header>
+
+<script>
+    const button = document.getElementById("menu-btn");
+    const menu = document.getElementById("mobile-menu");
+
+    button?.addEventListener("click", () => {
+        if (menu?.classList.contains("max-h-0")) {
+            menu.classList.remove("max-h-0", "opacity-0");
+            menu.classList.add("max-h-96", "opacity-100", "pb-4");
+        } else {
+            menu?.classList.add("max-h-0", "opacity-0");
+            menu?.classList.remove("max-h-96", "opacity-100", "pb-4");
+        }
+    });
+</script>

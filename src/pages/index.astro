@@ -12,15 +12,15 @@ import MessageIcon from "../components/icons/MessageIcon.astro";
 ---
 
 <Layout>
-	<main class="container mx-auto p-22" id="inicio">
+	<main class="container mx-auto px-4 py-4 md:px-10 lg:px-22" id="inicio">
 		<SectionContainer
 			id="sobremi"
 			class="grid md:grid-cols-[2fr_minmax(300px,400px)] justify-between gap-5 md:gap-10"
 		>
-			<div class="flex flex-col justify-center gap-y-2">
-				<h1 class="text-5xl font-bold select-none">Agustin Moreira</h1>
-				<h3 class="text-2xl select-none">Full-Stack Web Developer</h3>
-				<p class="text-lg select-none">
+			<div class="order-2 md:order-1 flex flex-col justify-center gap-y-2">
+				<h1 class="text-2xl sm:text-2xl lg:text-4xl font-bold select-none">Agustin Moreira</h1>
+				<h3 class="text-base sm:text-lg lg:text-xl select-none">Full-Stack Web Developer</h3>
+				<p class="text-sm sm:text-base lg:text-lg select-none">
 					Titulado en Ingeniería en Informática. Me especializo y
 					disfruto del desarrollo de aplicaciones y plataformas web
 					Full Stack, abarcando Front-end, Back-end y bases de datos,
@@ -31,25 +31,25 @@ import MessageIcon from "../components/icons/MessageIcon.astro";
 					mantenible, priorizando la innovación, la eficiencia y la
 					mejora continua.
 				</p>
-				<div class="flex flex-row mt-2 gap-4">
+				<div class="flex flex-col sm:flex-row mt-2 gap-4">
 					<SocialButtons>
-						<MessageIcon class="w-6 h-6" />
-						<span class="font-semibold">azugmoreira@gmail.com</span>
+						<MessageIcon class="size-4 sm:size-5 lg:size-6"  />
+						<span class="text-xs sm:text-sm lg:text-base font-semibold">azugmoreira@gmail.com</span>
 					</SocialButtons>
 					<SocialButtons href="https://github.com/Azxgo">
-						<GitHubIcon class="w-6 h-6" />
-						<span class="font-semibold">GitHub</span>
+						<GitHubIcon class="size-4 sm:size-5 lg:size-6"  />
+						<span class="text-xs sm:text-sm lg:text-base font-semibold">GitHub</span>
 					</SocialButtons>
 					<SocialButtons
 						href="https://www.linkedin.com/in/agustinmoreirat/"
 					>
-						<LinkedinIcon class="w-6 h-6" />
-						<span class="font-semibold">Linkedin</span>
+						<LinkedinIcon class="size-4 sm:size-5 lg:size-6" />
+						<span class="text-xs sm:text-sm lg:text-base font-semibold font-semibold">Linkedin</span>
 					</SocialButtons>
 				</div>
 			</div>
 
-			<div class="md:justify-self-end">
+			<div class="order-1 md:order-2 md:justify-self-end">
 				<div class="relative w-fit">
 					<div
 						class="absolute inset-0 translate-x-4 translate-y-4 rounded-3xl bg-zinc-800/30"
@@ -67,7 +67,7 @@ import MessageIcon from "../components/icons/MessageIcon.astro";
 						<img
 							src="/img/img1.JPEG"
 							alt="Agustín Moreira"
-							class="h-[420px] w-[340px] object-cover"
+							class="w-full max-w-[340px] h-auto object-cover"
 						/>
 					</div>
 				</div>
@@ -77,15 +77,15 @@ import MessageIcon from "../components/icons/MessageIcon.astro";
 		<SectionContainer
 			class="flex flex-col mt-10 justify-center items-center gap-y-3"
 		>
-			<h2 class="text-3xl mb-4 tracking-widest select-none">
+			<h2 class="text-xl sm:text-2xl lg:text-3xl mb-4 tracking-widest select-none">
 				COMPETENCIAS
 			</h2>
 
-			<ul class="flex justify-center items-center gap-6">
+			<ul class="flex flex-wrap justify-center items-center gap-2 sm:gap-6">
 				{
 					icons.map(({ icon: Icon, label }) => (
 						<AnimatedIcon label={label}>
-							<Icon class="size-16" />
+							<Icon class="size-6 sm:size-12 lg:size-16" />
 						</AnimatedIcon>
 					))
 				}
@@ -96,12 +96,12 @@ import MessageIcon from "../components/icons/MessageIcon.astro";
 			id="proyectos"
 			class="flex flex-col justify-center items-center"
 		>
-			<h2 class="text-3xl mb-10 tracking-widest select-none">
+			<h2 class="text-xl sm:text-2xl lg:text-3xl mb-10 tracking-widest select-none">
 				PROYECTOS
 			</h2>
 
 			<Projects />
-			<p class="text-gray-400 mt-4">
+			<p class="text-xs sm:text-sm lg:text-base text-gray-400 mt-4">
 				*Si alguno de los sitios no carga de inmediato se debe a que sus servidores
 				estan cargandose, para esto actualizar la pagina.
 			</p>
@@ -111,7 +111,7 @@ import MessageIcon from "../components/icons/MessageIcon.astro";
 			id="contacto"
 			class="flex flex-col justify-center items-center"
 		>
-			<h2 class="text-3xl mb-10 tracking-widest select-none">CONTACTO</h2>
+			<h2 class="text-xl sm:text-2xl lg:text-3xl mb-10 tracking-widest select-none">CONTACTO</h2>
 
 			<Contact />
 		</SectionContainer>

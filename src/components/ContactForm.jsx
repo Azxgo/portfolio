@@ -54,7 +54,7 @@ export function ContactForm({ lang }) {
         <div className="w-full">
             <form
                 onSubmit={handleSubmit}
-                className="flex flex-col w-full gap-4"
+                className="flex flex-col w-full gap-2 md:gap-4"
             >
                 <input
                     type="hidden"
@@ -68,8 +68,8 @@ export function ContactForm({ lang }) {
                         name="nombre"
                         placeholder={t[lang].name}
                         required
-                        className="rounded-lg p-3 bg-transparent border border-gray-600
-                        focus:border-white focus:outline-none transition duration-300"
+                        className="rounded-lg p-1 md:p-3 bg-transparent border border-gray-600
+                        focus:border-white focus:outline-none transition duration-300 text-xs md:text-base" 
                     />
                 </div>
 
@@ -78,8 +78,8 @@ export function ContactForm({ lang }) {
                     name="_replyto"
                     placeholder={t[lang].email}
                     required
-                    className="rounded-lg p-3 bg-transparent border border-gray-600
-                    focus:border-white focus:outline-none transition duration-300"
+                    className="rounded-lg p-1 md:p-3 bg-transparent border border-gray-600
+                    focus:border-white focus:outline-none transition duration-300 text-xs md:text-base"
                 />
 
                 <textarea
@@ -87,14 +87,14 @@ export function ContactForm({ lang }) {
                     rows="4"
                     placeholder={t[lang].message}
                     required
-                    className="rounded-lg p-3 bg-transparent border border-gray-600 
-                    focus:border-white focus:outline-none transition duration-300 resize-none"
+                    className="rounded-lg p-1 md:p-3 bg-transparent border border-gray-600 
+                    focus:border-white focus:outline-none transition duration-300 resize-none text-xs md:text-base"
                 ></textarea>
 
                 <button
                     type="submit"
-                    className="mt-2 rounded-lg p-3 bg-white text-black font-medium
-                    hover:bg-gray-200 transition duration-300"
+                    className="mt-2 rounded-lg p-1 md:p-3  bg-white text-black font-medium
+                    hover:bg-gray-200 transition duration-300 text-xs md:text-base"
                 >
                     {t[lang].submit}
                 </button>

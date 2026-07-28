@@ -7,11 +7,11 @@ const { label } = Astro.props;
         origin-center
     will-change-transform
     transform-gpu
-    scale-100 hover:scale-125 transition-transform duration-300 ease-in-out"
+    scale-100 hover:scale-125 transition-transform duration-300 ease-in-out items-center justify-center"
 >
     <slot />
     <div
-        class="flex text-center justify-center
+        class="absolute -bottom-7 text-center justify-center
     opacity-0 group-hover:opacity-100
     transition-opacity duration-300 ease-in-out"
     >

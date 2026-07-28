@@ -22,26 +22,26 @@ const t = {
 };
 ---
 
-<div class="grid grid-cols-2 w-full gap-10">
+<div class="grid grid-cols-1 md:grid-cols-2 w-full gap-10">
     <div class="flex flex-col justify-center gap-4 h-full">
-        <h2 class="text-3xl font-semibold">{t[lang].title}</h2>
+        <h2 class="text-xl sm:text-2xl lg:text-3xl font-semibold">{t[lang].title}</h2>
 
-        <p class="text-lg text-gray-400">
+        <p class="text-xs sm:text-sm lg:text-lg text-gray-400">
             {t[lang].description}
         </p>
 
         <div class="flex flex-col gap-2 text-sm">
             <div class="flex gap-2">
-                <MessageIcon class="w-5 h-5" />
-                <p>azugmoreira@gmail.com</p>
+                <MessageIcon class="size-4 lg:size-5" />
+                <p class="text-xs md:text-base">azugmoreira@gmail.com</p>
             </div>
             <a class="flex gap-2" href="https://www.linkedin.com/in/agustinmoreirat/">
-                <LinkedinIcon class="w-5 h-5"  />
-                <p>LinkedIn</p>
+                <LinkedinIcon class="size-4 lg:size-5"  />
+                <p class="text-xs md:text-base">LinkedIn</p>
             </a>
             <a class="flex gap-2" href="https://github.com/Azxgo">
-                <GitHubIcon class="w-5 h-5" />
-                <p>GitHub</p>
+                <GitHubIcon class="size-4 lg:size-5" />
+                <p class="text-xs md:text-base">GitHub</p>
             </a>
         </div>
     </div>

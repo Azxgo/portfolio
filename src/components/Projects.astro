@@ -76,7 +76,7 @@ const PROJECTS = [
 ];
 ---
 
-<ul class="grid grid-cols-2 gap-12">
+<ul class="grid grid-cols-1 md:grid-cols-2 gap-12">
     {
         PROJECTS.map(
             ({ icon, images, title, description, tags, link, github }) => (
@@ -87,14 +87,14 @@ const PROJECTS = [
                     <ImageGallery images={images} client:load />
                     <div class="flex flex-col gap-2 h-full">
                         <div class="flex gap-2 items-center">
-                            <img class="w-10 h-10" src={icon} alt="img" />
-                            <h1 class="text-3xl font-semibold mb-1">{title}</h1>
+                            <img class="size-7 md:size-9 lg:size-10" src={icon} alt="img" />
+                            <h1 class="text-xl sm:text-2xl lg:text-3xl font-semibold mb-1">{title}</h1>
                         </div>
-                        <p class="text-lg">{description[lang]}</p>
+                        <p class="text-[12px] md:text-base lg:text-lg">{description[lang]}</p>
                         <ul class="flex flex-wrap gap-2 mt-3">
                             {tags.map((tag) => (
                                 <li
-                                    class="px-3 py-1 text-sm font-medium
+                                    class="px-2 sm:px-3 py-1 text-[10px] sm:text-sm font-medium
                                     bg-gray-100 text-gray-700
                                     rounded-full select-none"
                                 >
