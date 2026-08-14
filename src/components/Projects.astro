@@ -4,9 +4,27 @@ import { ImageGallery } from "./ImageGallery";
 
 const { lang = "es" } = Astro.props as {
     lang?: "es" | "en";
-}; 
+};
 
 const PROJECTS = [
+    {
+        icon: "./projects/advtaskslogo.png",
+        title: "AdvTasks",
+        description: {
+            es: `AdvTasks es una plataforma de gestión de tareas que funciona como una ToDo List personal, incorporando caracteristicas inspiradas en sistemas de progresion de los videojuegos RPG.\n
+            La aplicación permite organizar las actividades diarias, establecer atributos y dificultades para las tareas y llevar un seguimiento del progreso mediante estadísticas.`,
+            en: `AdvTasks is a task management platform that works as a personal To-Do List, incorporating features inspired by progression systems found in RPG video games.\n The application allows users to organize their daily activities, set attributes and difficulty levels for tasks, and track their progress through statistics.`,
+        },
+        link: "https://advtasks.vercel.app/",
+        github: "https://github.com/Azxgo/advtasks",
+        images: [
+            "./projects/advtasks0.png",
+            "./projects/advtasks1.png",
+            "./projects/advtasks2.png",
+            "./projects/advtasks3.png",
+        ],
+        tags: ["React", "TypeScript", "NodeJS"],
+    },
     {
         icon: "./projects/asislablogo.png",
         title: "ASISLAB",
@@ -32,7 +50,7 @@ const PROJECTS = [
             "./projects/asislab9.png",
             "./projects/asislab10.png",
         ],
-        tags: ["IA", "React", "Python", "Flask", "JS"],
+        tags: ["IA", "React", "Python", "Flask", "TypeScript"],
     },
     {
         icon: "./projects/musimp4logo.png",
@@ -87,10 +105,18 @@ const PROJECTS = [
                     <ImageGallery images={images} client:load />
                     <div class="flex flex-col gap-2 h-full">
                         <div class="flex gap-2 items-center">
-                            <img class="size-7 md:size-9 lg:size-10" src={icon} alt="img" />
-                            <h1 class="text-xl sm:text-2xl lg:text-3xl font-semibold mb-1">{title}</h1>
+                            <img
+                                class="size-7 md:size-9 lg:size-10"
+                                src={icon}
+                                alt="img"
+                            />
+                            <h1 class="text-xl sm:text-2xl lg:text-3xl font-semibold mb-1">
+                                {title}
+                            </h1>
                         </div>
-                        <p class="text-[12px] md:text-base lg:text-lg">{description[lang]}</p>
+                        <p class="text-[12px] md:text-base lg:text-lg">
+                            {description[lang]}
+                        </p>
                         <ul class="flex flex-wrap gap-2 mt-3">
                             {tags.map((tag) => (
                                 <li
